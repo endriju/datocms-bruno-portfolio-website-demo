@@ -27,29 +27,3 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="container__sidebar">
-        <div class="sidebar">
-          <h6 class="sidebar__title">
-            <a href="/">{{ .Site.Data.settings.name }}</a>
-          </h6>
-
-          <div class="sidebar__intro">
-            {{ .Site.Data.settings.intro | markdownify }}
-          </div>
-
-          <ul class="sidebar__menu">
-            {{ $currentNode := . }}
-            {{ range .Site.Menus.main }}
-              <li{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} class="is-active"{{end}}>
-                <a href="{{ .URL }}">{{ .Name }}</a>
-              </li>
-            {{ end }}
-          </ul>
-
-          <div class="sidebar__copyright">
-            {{ .Site.Data.settings.copyright }}
-          </div>
-        </div>
-      </div>
-    </div>
